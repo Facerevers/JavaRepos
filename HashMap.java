@@ -35,6 +35,16 @@ public class HashMap<K, V> implements Iterable<HashMap.Entity> {
      */
     @Override
     public String toString() {
+        StringBuilder sb = new StringBuilder();
+        for (LinkedList list : buckets){
+            for (String item : list){
+                sb.append(item);
+                sb.append(", ");
+            }
+        }
+        if (sb.length() > 2){
+            sb.setLength(sb.length() - 2);
+        }
         return super.toString();
     }
 
